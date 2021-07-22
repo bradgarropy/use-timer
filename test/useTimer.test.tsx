@@ -18,7 +18,7 @@ test("initializes", () => {
 
 describe("start", () => {
     test("starts", () => {
-        const {result, unmount} = renderHook(() => useTimer())
+        const {result} = renderHook(() => useTimer())
 
         act(() => {
             result.current.start()
@@ -31,11 +31,10 @@ describe("start", () => {
         })
 
         expect(result.current).toEqual(mockRunningTimer)
-        unmount()
     })
 
     test("resumes", () => {
-        const {result, unmount} = renderHook(() => useTimer())
+        const {result} = renderHook(() => useTimer())
 
         act(() => {
             result.current.start()
@@ -58,11 +57,10 @@ describe("start", () => {
         })
 
         expect(result.current).toEqual(mockRunningTimer)
-        unmount()
     })
 
     test("ignores start when running", () => {
-        const {result, unmount} = renderHook(() => useTimer())
+        const {result} = renderHook(() => useTimer())
 
         act(() => {
             result.current.start()
@@ -79,7 +77,6 @@ describe("start", () => {
         })
 
         expect(result.current).toEqual(mockRunningTimer)
-        unmount()
     })
 })
 
