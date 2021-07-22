@@ -35,7 +35,10 @@ const useTimer = (): Timer => {
 
     useEffect(() => {
         return () => {
+            console.log("CLEANUP")
+
             if (timerId) {
+                console.log(`TIMER: ${timerId}`)
                 window.clearInterval(timerId)
             }
         }

@@ -16,7 +16,7 @@ test("initializes", () => {
     expect(result.current).toEqual(mockInitializedTimer)
 })
 
-describe("start", () => {
+describe.only("start", () => {
     test("starts", () => {
         const {result} = renderHook(() => useTimer())
 
