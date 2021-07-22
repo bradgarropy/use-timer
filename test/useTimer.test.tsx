@@ -38,9 +38,6 @@ describe("start", () => {
 
         act(() => {
             result.current.start()
-        })
-
-        act(() => {
             jest.advanceTimersByTime(100)
         })
 
@@ -64,9 +61,6 @@ describe("start", () => {
 
         act(() => {
             result.current.start()
-        })
-
-        act(() => {
             jest.advanceTimersByTime(100)
         })
 
