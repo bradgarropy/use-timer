@@ -22,7 +22,7 @@ type Lap = {
 const useTimer = (): Timer => {
     // status
     const [isActive, setIsActive] = useState(false)
-    const [isInactive, setIsInactive] = useState(false)
+    const [isInactive, setIsInactive] = useState(true)
     const [isRunning, setIsRunning] = useState(false)
     const [isPaused, setIsPaused] = useState(false)
 
@@ -34,14 +34,14 @@ const useTimer = (): Timer => {
     const [timerId, setTimerId] = useState(0)
 
     useEffect(() => {
-        setIsInactive(!isActive)
-    }, [isActive])
-
-    useEffect(() => {
-        if (isActive) {
-            setIsRunning(!isPaused)
+        return () => {
+            if (timerId) {
+                window.clearInterval(timerId)
+            }
         }
-    }, [isActive, isPaused])
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     useEffect(() => {
         if (!elapsedTime) {
@@ -59,11 +59,13 @@ const useTimer = (): Timer => {
     }, [elapsedTime, laps])
 
     const start = () => {
-        if (isActive && !isPaused) {
+        if (isRunning) {
             return
         }
 
         setIsActive(true)
+        setIsInactive(false)
+        setIsRunning(true)
         setIsPaused(false)
 
         if (!laps.length) {
@@ -86,26 +88,40 @@ const useTimer = (): Timer => {
     }
 
     const stop = () => {
+        if (isInactive || isPaused) {
+            return
+        }
+
         window.clearInterval(timerId)
 
         setIsActive(true)
+        setIsInactive(false)
+        setIsRunning(false)
         setIsPaused(true)
         setTimerId(0)
     }
 
     const reset = () => {
+        if (isInactive) {
+            return
+        }
+
         window.clearInterval(timerId)
 
         setIsActive(false)
         setIsInactive(true)
-        setIsPaused(false)
         setIsRunning(false)
+        setIsPaused(false)
         setTimerId(0)
         setElapsedTime(0)
         setLaps([])
     }
 
     const lap = () => {
+        if (isInactive || isPaused) {
+            return
+        }
+
         // create a copy of laps
         const newLaps = laps
 
