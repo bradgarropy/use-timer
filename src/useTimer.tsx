@@ -35,16 +35,11 @@ const useTimer = (): Timer => {
 
     useEffect(() => {
         return () => {
-            console.log("CLEANUP")
-
             if (timerId) {
-                console.log(`TIMER: ${timerId}`)
                 window.clearInterval(timerId)
             }
         }
-
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, [timerId])
 
     useEffect(() => {
         if (!elapsedTime) {
