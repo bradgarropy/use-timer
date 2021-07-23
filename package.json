@@ -1,14 +1,16 @@
 {
-    "name": "use-timer",
+    "name": "@bradgarropy/use-timer",
     "version": "0.0.1",
     "description": "⏱ useTimer hook",
     "keywords": [
         "typescript",
-        "react",
         "eslint",
         "prettier",
+        "react",
         "jest",
-        "starter"
+        "react-hook",
+        "timer",
+        "stopwatch"
     ],
     "homepage": "https://github.com/bradgarropy/use-timer",
     "bugs": {
