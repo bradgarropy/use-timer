@@ -10,7 +10,13 @@
 [![contributors][contributors-badge]][contributors]
 [![discord][discord-badge]][discord]
 
-_Starter for [`react`][react] libraries._
+_[`React`][react] hook implementation of a stopwatch. Featured in [**MURPHY**][murphy]._
+
+<p align="center">
+    <a href="https://www.npmjs.com/package/@bradgarropy/use-timer">
+        <img alt="next link" src="./images/github.png" width="500">
+    </a>
+</p>
 
 ## 📦 Installation
 
@@ -22,11 +28,54 @@ npm install @bradgarropy/use-timer
 
 ## 🥑 Usage
 
-// TODO: Write usage section.
+Import the `useTimer` hook in any React component, then call it to receive a `timer` that holds the state and functions which implement a stopwatch.
+
+```javascript
+import useTimer from "@bradgarropy/use-timer"
+
+const App = () => {
+    const timer = useTimer()
+
+    timer.start()
+
+    timer.lap()
+    timer.lap()
+    timer.lap()
+
+    timer.stop()
+
+    console.log(timer.elapsedTime)
+    // 3000
+
+    console.log(timer.laps)
+    // [
+    //   {start: 0, end: 1000, time: 1000},
+    //   {start: 1000, end: 2000, time: 1000},
+    //   {start: 2000, end: 3000, time: 1000}
+    // ]
+
+    timer.reset()
+}
+```
 
 ## 📖 API Reference
 
-// TODO: Write api reference section.
+### `useTimer()`
+
+Instantiates a `timer`, which updates with the latest values. No arguments are required. The hook returns an object with everything needed to implement a stopwatch.
+
+| Name          |    Type    |  Example   | Description                                |
+| :------------ | :--------: | :--------: | :----------------------------------------- |
+| `isActive`    | `boolean`  |  `false`   | Countdown minutes.                         |
+| `isInactive`  | `boolean`  |   `true`   | Countdown minutes.                         |
+| `isRunning`   | `boolean`  |  `false`   | Countdown seconds.                         |
+| `isPaused`    | `boolean`  |  `false`   | Format string ([reference][format]).       |
+| `elapsedTime` |  `number`  |    `0`     | Function to call when countdown completes. |
+| `laps`        |  `object`  |    `[]`    | Function to call when countdown completes. |
+| `start`       | `function` | `function` | Function to call when countdown completes. |
+| `stop`        | `function` | `function` | Function to call when countdown completes. |
+| `reset`       | `function` | `function` | Function to call when countdown completes. |
+| `lap`         | `function` | `function` | Function to call when countdown completes. |
 
 ## ❔ Questions
 
@@ -71,3 +120,4 @@ npm install @bradgarropy/use-timer
 [discord]: https://bradgarropy.com/discord
 [discord-badge]: https://img.shields.io/discord/748196643140010015?style=flat-square
 [react]: https://reactjs.org
+[murphy]: https://murphy.bradgarropy.com
