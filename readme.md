@@ -128,4 +128,4 @@ Each of the functions are ignored in certain situations.
 [discord-badge]: https://img.shields.io/discord/748196643140010015?style=flat-square
 [react]: https://reactjs.org
 [murphy]: https://murphy.bradgarropy.com
-[laps]: https://github.com/bradgarropy/use-timer/blob/master/src/useTimer.tsx#L16
+[laps]: https://github.com/bradgarropy/use-timer/blob/master/src/useTimer.tsx#L16-L20
