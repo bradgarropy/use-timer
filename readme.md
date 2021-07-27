@@ -10,7 +10,7 @@
 [![contributors][contributors-badge]][contributors]
 [![discord][discord-badge]][discord]
 
-_[`React`][react] hook implementation of a stopwatch. Featured in [**MURPHY**][murphy]._
+_[`React`][react] hook implementation of a stopwatch. Featured in [MURPHY][murphy]._
 
 <p align="center">
     <a href="https://www.npmjs.com/package/@bradgarropy/use-timer">
@@ -64,18 +64,25 @@ const App = () => {
 
 Instantiates a `timer`, which updates with the latest values. No arguments are required. The hook returns an object with everything needed to implement a stopwatch.
 
-| Name          |    Type    |  Example   | Description                                |
-| :------------ | :--------: | :--------: | :----------------------------------------- |
-| `isActive`    | `boolean`  |  `false`   | Countdown minutes.                         |
-| `isInactive`  | `boolean`  |   `true`   | Countdown minutes.                         |
-| `isRunning`   | `boolean`  |  `false`   | Countdown seconds.                         |
-| `isPaused`    | `boolean`  |  `false`   | Format string ([reference][format]).       |
-| `elapsedTime` |  `number`  |    `0`     | Function to call when countdown completes. |
-| `laps`        |  `object`  |    `[]`    | Function to call when countdown completes. |
-| `start`       | `function` | `function` | Function to call when countdown completes. |
-| `stop`        | `function` | `function` | Function to call when countdown completes. |
-| `reset`       | `function` | `function` | Function to call when countdown completes. |
-| `lap`         | `function` | `function` | Function to call when countdown completes. |
+| Name          |    Type    |  Example   | Description                                                    |
+| :------------ | :--------: | :--------: | :------------------------------------------------------------- |
+| `isActive`    | `boolean`  |  `false`   | Indicates that the timer is active, either running or paused.  |
+| `isInactive`  | `boolean`  |   `true`   | Indicates that the timer is inactive, and hasn't been started. |
+| `isRunning`   | `boolean`  |  `false`   | Indicates if the timer is running.                             |
+| `isPaused`    | `boolean`  |  `false`   | Indicates if the timer is paused.                              |
+| `elapsedTime` |  `number`  |    `0`     | Total time in milliseconds.                                    |
+| `laps`        |  `object`  |    `[]`    | Array of [`laps`][laps].                                       |
+| `start`       | `function` | `function` | Starts the timer.                                              |
+| `stop`        | `function` | `function` | Pauses the timer.                                              |
+| `reset`       | `function` | `function` | Resets the timer.                                              |
+| `lap`         | `function` | `function` | Adds a new lap.                                                |
+
+Each of the functions are ignored in certain situations.
+
+-   `start` does nothing if the timer is already running.
+-   `stop` does nothing if the timer is already paused.
+-   `reset` does nothing if the timer is inactive.
+-   `lap` does nothing if the timer is paused.
 
 ## ❔ Questions
 
@@ -121,3 +128,4 @@ Instantiates a `timer`, which updates with the latest values. No arguments are r
 [discord-badge]: https://img.shields.io/discord/748196643140010015?style=flat-square
 [react]: https://reactjs.org
 [murphy]: https://murphy.bradgarropy.com
+[laps]: https://github.com/bradgarropy/use-timer/blob/master/src/useTimer.tsx#L16

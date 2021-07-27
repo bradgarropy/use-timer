@@ -20,6 +20,9 @@ type Lap = {
 }
 
 const useTimer = (): Timer => {
+    // TODO: consider reducing the number of state variables
+    // TODO: rather, derive values from state
+
     // status
     const [isActive, setIsActive] = useState(false)
     const [isInactive, setIsInactive] = useState(true)
@@ -53,6 +56,7 @@ const useTimer = (): Timer => {
         currentLap.end = elapsedTime
         currentLap.time = currentLap.end - currentLap.start
 
+        // TODO: use function argument
         setLaps(newLaps)
     }, [elapsedTime, laps])
 
@@ -79,6 +83,7 @@ const useTimer = (): Timer => {
         const startTime = Date.now()
 
         const timerId = window.setInterval(() => {
+            // TODO: consider the performance api
             setElapsedTime(elapsedTime + Date.now() - startTime)
         }, 10)
 
