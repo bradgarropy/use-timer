@@ -100,6 +100,7 @@ Each of the control functions are ignored in certain situations.
 <table>
   <tr>
     <td align="center"><a href="https://bradgarropy.com"><img src="https://avatars.githubusercontent.com/u/11336745?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Brad Garropy</b></sub></a><br /><a href="https://github.com/bradgarropy/use-timer/commits?author=bradgarropy" title="Code">💻</a> <a href="https://github.com/bradgarropy/use-timer/commits?author=bradgarropy" title="Documentation">📖</a> <a href="https://github.com/bradgarropy/use-timer/commits?author=bradgarropy" title="Tests">⚠️</a> <a href="#infra-bradgarropy" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://github.com/sapter"><img src="https://avatars.githubusercontent.com/u/29054106?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sam Apter</b></sub></a><br /><a href="https://github.com/bradgarropy/use-timer/issues?q=author%3Asapter" title="Bug reports">🐛</a> <a href="https://github.com/bradgarropy/use-timer/commits?author=sapter" title="Documentation">📖</a></td>
   </tr>
 </table>
 
