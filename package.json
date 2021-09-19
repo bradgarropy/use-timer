@@ -1,6 +1,6 @@
 {
     "name": "@bradgarropy/use-timer",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "⏱ useTimer hook",
     "keywords": [
         "typescript",
@@ -51,7 +51,7 @@
         "@testing-library/react": "^12.0.0",
         "@testing-library/react-hooks": "^7.0.1",
         "@testing-library/user-event": "^13.2.1",
-        "@types/jest": "^26.0.24",
+        "@types/jest": "^27.0.1",
         "@types/react": "^17.0.15",
         "@types/react-dom": "^17.0.9",
         "@typescript-eslint/eslint-plugin": "^4.28.5",

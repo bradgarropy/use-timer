@@ -77,7 +77,9 @@ Instantiates a `timer`, which updates with the latest values. No arguments are r
 | `reset`       | `function` | `function` | Resets the timer.                                              |
 | `lap`         | `function` | `function` | Adds a new lap.                                                |
 
-Each of the functions are ignored in certain situations.
+The `elapsedTime` is expressed in milliseconds, and has a resolution of `10ms`.
+
+Each of the control functions are ignored in certain situations.
 
 -   `start` does nothing if the timer is already running.
 -   `stop` does nothing if the timer is already paused.
